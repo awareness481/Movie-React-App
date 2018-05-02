@@ -1,6 +1,7 @@
 import React from 'react';
 import NewMovies from './NewMovies';
 import Action from './Action';
+import SearchResults from './SearchResults';
 
 export default class MovieApp extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ export default class MovieApp extends React.Component {
       movie: e
     });
   }
+
   componentDidUpdate() {
     console.log('update!');
   }
@@ -30,6 +32,7 @@ export default class MovieApp extends React.Component {
         <Action
           onHandleAction={this.handleAction} 
         />
+        <SearchResults query={this.state.movie} />
       </div>
     );
   }
