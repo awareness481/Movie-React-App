@@ -1,4 +1,6 @@
 import React from 'react';
+// import MoviePage from 'MoviePage';
+import { Link } from 'react-router-dom';
 
 export default class SearchResults extends React.Component {
   constructor(props) {
@@ -8,6 +10,7 @@ export default class SearchResults extends React.Component {
       query: '',
       array: []
     }
+
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -17,12 +20,11 @@ export default class SearchResults extends React.Component {
     }
   }
 
+
   componentDidUpdate() {
-    if (this.state.query === '') {
+    if ( this.state.query === '') {
       return 'Query was empty';
     }
-
-    let movies = [];
 
     const url = `http://www.omdbapi.com/?s=${this.state.query}&type=movie&r=json&apikey=${API_KEY}`;
     fetch(url)
@@ -33,7 +35,12 @@ export default class SearchResults extends React.Component {
         }
         let movies = Array.from(data.Search);
         this.setState({
-          array: movies.map((movie) => <li key={movie.Title}>{movie.Title}</li>)
+          array: movies.map((movie) => <Link to={`/movie/${movie.imdbID}`}>
+          <li key={movie.Title}>
+            {movie.Title}
+          </li>
+          </Link>
+          )
         })
       })
   }
