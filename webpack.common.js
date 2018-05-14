@@ -5,6 +5,7 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/app.js',
+  mode: 'development',
   node: {
     fs: 'empty'
   },
@@ -22,8 +23,12 @@ module.exports = {
       use: [
         'style-loader',
         'css-loader',
-        'sass-loader'
+        'sass-loader',
+        'resolve-url-loader'
       ]
+    }, {
+      test: /\.(gif|svg|jpg|png)$/,
+      loader: "file-loader",
     }]
   }
 };
