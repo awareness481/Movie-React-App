@@ -35,11 +35,13 @@ export default class SearchResults extends React.Component {
         }
         let movies = Array.from(data.Search);
         this.setState({
-          array: movies.map((movie) => <Link to={`/movie/${movie.imdbID}`}>
-          <li key={movie.Title}>
-            {movie.Title}
-          </li>
-          </Link>
+          array: movies.map((movie) =>
+            <Link to={`/movie/${movie.imdbID}`}>
+              <li key={movie.Title}>
+                {/* <h2>{movie.Title}</h2> */}
+                <img src={`${movie.Poster}`} /> 
+              </li>
+            </Link>
           )
         })
       })
@@ -48,7 +50,7 @@ export default class SearchResults extends React.Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className='results'>
           {this.state.array}
         </ul>
       </div>
