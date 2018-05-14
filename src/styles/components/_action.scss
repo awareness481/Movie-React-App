@@ -1,0 +1,25 @@
+.searchForm {
+    position: absolute;
+    width: 45%;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.searchInput {
+    background-color: rgba(163, 163, 163, 0.8);
+    height: $xl-size;
+    padding: $s-size;
+    width: 100%;
+    font-size: $xl-size;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid blue;
+}
+
+.searchInput:focus {
+    outline: none;
+    background-color: rgba(32, 32, 32, 0.9);
+    color: white;
+    border-bottom: 3px solid red;
+}
