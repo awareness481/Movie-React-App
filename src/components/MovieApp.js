@@ -1,7 +1,7 @@
 import React from 'react';
-import NewMovies from './NewMovies';
 import Action from './Action';
 import SearchResults from './SearchResults';
+import image from '../styles/img/a.jpg';
 
 export default class MovieApp extends React.Component {
   constructor(props) {
@@ -28,11 +28,13 @@ export default class MovieApp extends React.Component {
 
   render() {
     return (
-      <div>
-        <Action
-          onHandleAction={this.handleAction} 
-        />
-        <SearchResults query={this.state.movie} />
+      <div className='app'>
+        <div className='img'>
+          <Action
+            onHandleAction={this.handleAction} 
+          />
+          <SearchResults query={this.state.movie} />
+        </div>
       </div>
     );
   }
