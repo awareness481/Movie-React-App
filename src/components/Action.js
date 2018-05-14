@@ -24,8 +24,14 @@ export default class Action extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleAction}>
-          <input type='text' name='query' value={this.state.val} onChange={this.handleChange}/>
+        <form onSubmit={this.handleAction} className='searchForm'>
+          <input 
+            type='text' 
+            name='query'
+            className='searchInput' 
+            value={this.state.val} 
+            onChange={this.handleChange}
+          />
         </form>
       </div>
     );
