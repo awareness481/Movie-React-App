@@ -1,11 +1,13 @@
 import React from 'react';
+import Autosuggest from 'react-autosuggest';
 
 export default class Action extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      val: ''
+      val: '',
+      suggestions: []
     }
 
     this.handleAction = this.handleAction.bind(this);
