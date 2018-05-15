@@ -1,0 +1,51 @@
+.movie {
+    position: relative;
+    top: 20%;
+    left: 17%;
+    width: 66%;
+    border: 1px solid red;
+    background: rgba(17, 13, 13, 1);
+    color: white;
+}
+
+.movie-container {
+    display: flex;
+}
+
+.movie-container div {
+    margin-right: 5%;
+}
+
+.movie-details {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.movie-details span {
+    display: inline-block;
+    flex: 0 50%;
+    box-sizing: border-box;
+    font-size: $s-size;
+}
+
+.movie-title {
+    font-size: $xl-size;
+    text-transform: uppercase;
+}
+
+.movie-two p {
+    font-size: $m-size;
+    color: #d3d3d3;
+}
+
+.movie-details span h3 {
+    font-size: $m-size;
+    color: #00ff7f;
+}
+
+.subtitle {
+    font-size: $s-size;
+    color: #00ff7f; 
+}
+
