@@ -1,6 +1,6 @@
 import React from 'react';
 import Action from './Action';
-import SearchResults from './SearchResults';
+import MoviePage from './MoviePage'
 import image from '../styles/img/a.jpg';
 
 export default class MovieApp extends React.Component {
@@ -33,7 +33,7 @@ export default class MovieApp extends React.Component {
           <Action
             onHandleAction={this.handleAction} 
           />
-          <SearchResults query={this.state.movie} />
+          {this.state.movieSelected && <MoviePage movie={this.state.movie} />}
         </div>
       </div>
     );
