@@ -24,11 +24,20 @@ export default class MoviePage extends React.Component {
     }
 
     this.handleMovieDetails = this.handleMovieDetails.bind(this);
+    this.fetchInformation = this.fetchInformation.bind(this);
   }
 
   componentDidMount(props) {
+    this.fetchInformation();
+  }
+
+  componentDidUpdate(props) {
+    this.fetchInformation();
+  }
+
+  fetchInformation() {
     const id = this.props.movie;
-    const url = `http://www.omdbapi.com/?t=${id}&plot=full&apikey=API_KEY`;
+    const url = `http://www.omdbapi.com/?t=${id}&plot=full&apikey=${process.env.API_KEY}`;
 
     fetch(url)
       .then(res => res.json())
@@ -57,14 +66,13 @@ export default class MoviePage extends React.Component {
       <div className='movie'>
         <div className='movie-container'>
           <div className='movie-poster'>
-            <img src={this.state.Poster} />
+            <img className='poster' src={this.state.Poster} />
           </div>
           <div className='movie-two'>
-            <h1 className='movie-title'>{this.state.Title}</h1>
+            <h1 className='movie-title'>{this.state.Title} <span className='year'>({this.state.Year})</span></h1>
             <span className='subtitle'>{this.state.Rating}, {this.state.Runtime}</span>
             <p>{this.state.Plot}</p>
             <div className='movie-details'>
-              <span><h3>Original Release: </h3>{this.state.Year}</span>
               <span><h3>Genre: </h3>{this.state.Genre}</span>
               <span><h3>Writer: </h3>{this.state.Writer}</span><span><h3>Director: </h3>{this.state.Director}</span>
             </div>
