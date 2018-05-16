@@ -3,8 +3,7 @@
     top: 20%;
     left: 17%;
     width: 66%;
-    border: 1px solid red;
-    background: rgba(17, 13, 13, 1);
+    background: rgba(17, 13, 13, 0.9);
     color: white;
 }
 
@@ -19,14 +18,14 @@
 .movie-details {
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
 }
 
 .movie-details span {
     display: inline-block;
     flex: 0 50%;
     box-sizing: border-box;
-    font-size: $s-size;
+    font-size: $m-size;
+    text-align: left;
 }
 
 .movie-title {
@@ -42,6 +41,7 @@
 .movie-details span h3 {
     font-size: $m-size;
     color: #00ff7f;
+    margin-bottom: 2%;
 }
 
 .subtitle {
@@ -49,3 +49,14 @@
     color: #00ff7f; 
 }
 
+
+.poster {
+    height: 100%;
+    width: 200px;
+}
+
+.year {
+    opacity: 0.6;
+    font-size: $l-size;
+    vertical-align: text-top;
+}
