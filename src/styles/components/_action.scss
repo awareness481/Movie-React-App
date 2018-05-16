@@ -1,25 +1,34 @@
 .searchForm {
     position: absolute;
     width: 45%;
-    top: 25%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .searchInput {
-    background-color: rgba(163, 163, 163, 0.8);
+    color: white;
+    background-color: rgba(32, 32, 32, 0.9);
     height: $xl-size;
     padding: $s-size;
     width: 100%;
     font-size: $xl-size;
     border: none;
     outline: none;
-    border-bottom: 3px solid blue;
+    border-bottom: 1px solid white;
 }
 
 .searchInput:focus {
     outline: none;
-    background-color: rgba(32, 32, 32, 0.9);
+}
+
+.searchInput::placeholder {
+    font-size: $l-size;
     color: white;
-    border-bottom: 3px solid red;
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.searchInput:focus::placeholder {
+    color: transparent;
 }
