@@ -5,7 +5,6 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/app.js',
-  mode: 'development',
   node: {
     fs: 'empty'
   },
@@ -13,6 +12,9 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
   },
+  plugins: [
+    new Dotenv()
+  ],
   module: {
     rules: [{
       loader: 'babel-loader',
