@@ -22,10 +22,6 @@ export default class MovieApp extends React.Component {
     });
   }
 
-  componentDidUpdate() {
-    console.log('update!');
-  }
-
   render() {
     return (
       <div className='app'>

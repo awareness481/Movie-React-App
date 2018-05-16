@@ -1,5 +1,4 @@
 import React from 'react';
-import Autosuggest from 'react-autosuggest';
 
 export default class Action extends React.Component {
   constructor(props) {
@@ -30,6 +29,7 @@ export default class Action extends React.Component {
           <input 
             type='text' 
             name='query'
+            placeholder='Search Movie Title'
             className='searchInput' 
             value={this.state.val} 
             onChange={this.handleChange}
